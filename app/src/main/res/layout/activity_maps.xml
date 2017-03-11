@@ -1,0 +1,111 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MapsActivity"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.CardView
+        android:layout_gravity="top"
+        android:layout_margin="5dp"
+        android:layout_width="400dp"
+        android:layout_height="40dp">
+
+        <fragment
+            android:id="@+id/autocomplete_fragment"
+            android:name="com.google.android.gms.location.places.ui.PlaceAutocompleteFragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </android.support.v7.widget.CardView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="1">
+        <Button
+            android:layout_marginLeft="0dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/nearestbusstop"
+            android:onClick="nearestbusstop"
+            android:text="Nearest"/>
+        <Button
+            android:layout_width="105dp"
+            android:layout_height="match_parent"
+            android:onClick="drawroute"
+            android:id="@+id/btnFindPath"
+            android:text="Directions"/>
+        <ImageView
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="5dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/distance"/>
+        <TextView
+            android:layout_marginLeft="0dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0 km"
+            android:id="@+id/tvDistance" />
+
+        <ImageView
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="5dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:padding="5dp"
+            android:src="@drawable/clock"/>
+        <TextView
+            android:layout_marginLeft="0dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0 min"
+            android:id="@+id/tvDuration" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="1">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="History"
+            android:onClick=""
+            android:id="@+id/buttonHistory" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bus Status"
+            android:onClick="busStatus"
+            android:id="@+id/buttonBusStatus" />
+        <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Route Map"
+        android:onClick=""
+        android:id="@+id/buttonRouteMap" />
+
+        <ImageButton
+            android:layout_marginTop="0dp"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:src="@drawable/logout"
+            android:scaleType="fitCenter"
+            android:onClick="logoutUser"
+            android:id="@+id/buttonLogout" />
+    </LinearLayout>
+
+
+    <fragment
+    android:id="@+id/map"
+    android:name="com.google.android.gms.maps.SupportMapFragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.natarajan.transitproject.MapsActivity">
+    </fragment>
+</LinearLayout>
